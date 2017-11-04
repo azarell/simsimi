@@ -13,7 +13,6 @@ $channelSecret = '4108f1189692251b18ffdd96e108d057';//Your Channel Secret
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
 $userId 	= $client->parseEvents()[0]['source']['userId'];
-$groupId 	= $client->parseEvents()[0]['source']['groupId'];
 $replyToken = $client->parseEvents()[0]['replyToken'];
 $message 	= $client->parseEvents()[0]['message'];
 $profil = $client->profil($userId);
@@ -38,7 +37,7 @@ else
 $pesan=str_replace(" ", "%20", $pesan_datang);
 $key = '7dce4e78-7d76-4de5-b797-d8f6d2ab868d'; //API SimSimi
 $url = 'http://sandbox.api.simsimi.com/request.p?key='.$key.'&lc=id&ft=1.0&text='.$pesan;
-$json_data = '{"response":"'.$pesan." [".$groupId."] userid:[".$userId."] ".$profil->displayName.'","id":110421375,"result":100,"msg":"OK."}';
+$json_data = '{"response":"'.$pesan." [".$profil->groupId."] userid:[".$userId."] ".$profil->displayName.'","id":110421375,"result":100,"msg":"OK."}';
 $url=json_decode($json_data,1);
 $diterima = $url['response'];
 if($message['type']=='text')
