@@ -12,7 +12,7 @@ $channelSecret = '4108f1189692251b18ffdd96e108d057';//Your Channel Secret
 
 $client = new LINEBotTiny($channelAccessToken, $channelSecret);
 
-$userId 	= $client->parseEvents()[0]['source']['userId']['groupId'];
+$userId 	= $client->parseEvents()[0]['source']['userId'];
 $replyToken = $client->parseEvents()[0]['replyToken'];
 $message 	= $client->parseEvents()[0]['message'];
 $profil = $client->profil($userId);
