@@ -36,7 +36,7 @@ if($message['type']=='sticker')
 else
 $pesan=str_replace(" ", "%20", $pesan_datang);
 $key = '7dce4e78-7d76-4de5-b797-d8f6d2ab868d'; //API SimSimi
-$url = 'aku hanyalah manusia';
+$url = 'aku%20hanyalah%20manusia';
 $json_data = file_get_contents($url);
 $url=json_decode($json_data,1);
 $diterima = $url['response'];
