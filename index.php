@@ -6,7 +6,7 @@ And Modified by Farzain - zFz ( Faraaz )
 2017
 */
 require_once('./line_class.php');
-
+session_start();
 $channelAccessToken = '/tcZRyEboiJy5hvho5KIblRr+LQuX4TsmMPoae6FCRU7gUv0Hh1yKIJA3L31mMRQQUSGH3m1uN84VNF6360t9j0t/xMXBABO6jIdwvLucCv+Gl1MzsS3VxGZUBEv+wjH8E0KkXOJjtOt/zEiUJLSUAdB04t89/1O/w1cDnyilFU='; //Your Channel Access Token
 $channelSecret = '4108f1189692251b18ffdd96e108d057';//Your Channel Secret
 
