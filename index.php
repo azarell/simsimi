@@ -39,7 +39,7 @@ else
 $pesan=str_replace(" ", "%20", $pesan_datang);
 $key = '7dce4e78-7d76-4de5-b797-d8f6d2ab868d'; //API SimSimi
 /*$url = 'http://sandbox.api.simsimi.com/request.p?key='.$key.'&lc=id&ft=1.0&text='.$pesan;*/
-$url = 'http://karyakreatif.com/tebakkata/?pesan='.$pesan.'&gr='.$profil->groupId.'&u='.$profil->userId.'&un='.$profil->displayName;
+$url = 'http://karyakreatif.com/tebakkata/?pesan='.$pesan.'&gr='.$groupId.'&u='.$userId.'&un='.$profil->displayName;
 $json_data = file_get_contents($url);
 $url=json_decode($json_data,1);
 $_SESSION['ks']=$url['ks'];
