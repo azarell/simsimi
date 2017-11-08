@@ -84,7 +84,7 @@ if($url['result'] != 100)
 							'messages' => array(
 								array(
 										'type' => 'text',					
-										'text' => ''.$diterima.$profil->displayName.''
+										'text' => ''.$diterima.'['.$profil->displayName.']'
 									)
 							)
 						);
