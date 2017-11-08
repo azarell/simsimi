@@ -42,6 +42,7 @@ $key = '7dce4e78-7d76-4de5-b797-d8f6d2ab868d'; //API SimSimi
 $url = 'http://karyakreatif.com/tebakkata/?pesan='.$pesan;
 $json_data = file_get_contents($url);
 $url=json_decode($json_data,1);
+$_SESSION['ks']=$url['ks'];
 $diterima = $url['response'];
 if($message['type']=='text')
 {
