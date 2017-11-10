@@ -37,7 +37,7 @@ if($message['type']=='sticker')
 else
 	/*groupid:[".$groupId."] userid:[".$userId."] ".$profil->displayName.'*/
 $pesan=str_replace(" ", "%20", $pesan_datang);
-$key = '7dce4e78-7d76-4de5-b797-d8f6d2ab868d'; //API SimSimi
+//$key = '7dce4e78-7d76-4de5-b797-d8f6d2ab868d'; //API SimSimi
 /*$url = 'http://sandbox.api.simsimi.com/request.p?key='.$key.'&lc=id&ft=1.0&text='.$pesan;*/
 $url = 'http://karyakreatif.com/tebakkata/?pesan='.$pesan.'&gr='.$groupId.'&u='.$userId.'&un='.$profil->displayName;
 $json_data = file_get_contents($url);
@@ -60,7 +60,7 @@ if($url['result'] == 404)
 						);
 				
 	}
-else
+/*else
 if($url['result'] != 100)
 	{
 		
@@ -76,7 +76,7 @@ if($url['result'] != 100)
 							)
 						);
 				
-	}
+	}*/
 	else{
 		$balas = array(
 							'UserID' => $profil->userId,
