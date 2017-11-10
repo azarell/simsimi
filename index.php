@@ -60,7 +60,7 @@ if($url['result'] == 404)
 						);
 				
 	}
-/*else
+else
 if($url['result'] != 100)
 	{
 		
@@ -76,7 +76,7 @@ if($url['result'] != 100)
 							)
 						);
 				
-	}*/
+	}
 	else{
 		$balas = array(
 							'UserID' => $profil->userId,
