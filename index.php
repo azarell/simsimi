@@ -69,7 +69,7 @@ if($url['result'] != 100)
 							'messages' => array(
 								array(
 										'type' => 'text',					
-										'text' => 'Maaf '.$groupId.$profil->displayName.' Server Kami Sedang Sibuk Sekarang.'
+										'text' => 'Maaf '.$diterima.$groupId.$profil->displayName.' Server Kami Sedang Sibuk Sekarang.'
 									)
 							)
 						);
