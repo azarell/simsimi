@@ -37,7 +37,8 @@ if($message['type']=='sticker')
 else
 	
 $pesan=str_replace(" ", "%20", $pesan_datang);
-$url = 'http://karyakreatif.com/tebakkata/?pesan='.$pesan_datang.'&gr='.$groupId.'&u='.$userId.'&un='.$profil->displayName;
+$usernm = str_replace(" ", "%20", $profil->displayName);
+$url = 'http://karyakreatif.com/tebakkata/?pesan='.$pesan.'&gr='.$groupId.'&u='.$userId.'&un='.$usernm;
 $json_data = file_get_contents($url);
 $url=json_decode($json_data,1);
 
@@ -69,7 +70,7 @@ if($url['result'] != 100)
 							'messages' => array(
 								array(
 										'type' => 'text',					
-										'text' => 'Maaf '.$diterima.$groupId.$profil->displayName.' Server Kami Sedang Sibuk Sekarang.'
+										'text' => 'Maaf '.$profil->displayName.' Server Kami Sedang Sibuk Sekarang.'
 									)
 							)
 						);
@@ -82,7 +83,7 @@ if($url['result'] != 100)
 							'messages' => array(
 								array(
 										'type' => 'text',					
-										'text' => ''.$diterima.$groupId.$profil->displayName.''
+										'text' => ''.$diterima.''
 									)
 							)
 						);
