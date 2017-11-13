@@ -58,7 +58,7 @@ if($url['result'] == 404)
 							)
 						);
 				
-	}
+	/*}
 else
 if($url['result'] != 100)
 	{
@@ -73,7 +73,7 @@ if($url['result'] != 100)
 										'text' => 'Maaf '.$profil->displayName.' Server Kami Sedang Sibuk Sekarang.'
 									)
 							)
-						);
+						);*/
 				
 	}
 	else{
