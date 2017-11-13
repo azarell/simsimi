@@ -37,7 +37,7 @@ if($message['type']=='sticker')
 else
 	
 $pesan=str_replace(" ", "%20", $pesan_datang);
-$url = 'http://karyakreatif.com/tebakkata/?pesan='.$pesan.'&gr='.$groupId.'&u='.$userId.'&un='.$profil->displayName;
+$url = 'http://karyakreatif.com/tebakkata/?pesan='.$pesan_datang.'&gr='.$groupId.'&u='.$userId.'&un='.$profil->displayName;
 $json_data = file_get_contents($url);
 $url=json_decode($json_data,1);
 
