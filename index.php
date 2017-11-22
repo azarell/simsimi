@@ -1,10 +1,5 @@
 <?php
-/*
-copyright @ medantechno.com
-Modified by Ilyasa
-And Modified by Farzain - zFz ( Faraaz )
-2017
-*/
+
 require_once('./line_class.php');
 session_start();
 $channelAccessToken = '/tcZRyEboiJy5hvho5KIblRr+LQuX4TsmMPoae6FCRU7gUv0Hh1yKIJA3L31mMRQQUSGH3m1uN84VNF6360t9j0t/xMXBABO6jIdwvLucCv+Gl1MzsS3VxGZUBEv+wjH8E0KkXOJjtOt/zEiUJLSUAdB04t89/1O/w1cDnyilFU='; //Your Channel Access Token
@@ -18,6 +13,18 @@ $replyToken = $client->parseEvents()[0]['replyToken'];
 $message 	= $client->parseEvents()[0]['message'];
 $profil = $client->profil($userId);
 $pesan_datang = $message['text'];
+
+$bot = new \LINE\LINEBot(new CurlHTTPClient($channelAccessToken), [
+    'channelSecret' => $channelSecret
+]);
+
+$res = $bot->getProfile('user-id');
+if ($res->isSucceeded()) {
+    $profile = $res->getJSONDecodedBody();
+    $displayName = $profile['displayName'];
+    $statusMessage = $profile['statusMessage'];
+    $pictureUrl = $profile['pictureUrl'];
+}
 
 if($message['type']=='sticker')
 {	
@@ -38,7 +45,7 @@ else
 	
 $pesan=str_replace(" ", "%20", $pesan_datang);
 $usernm = str_replace(" ", "%20", $profil->displayName);
-$url = 'http://karyakreatif.com/tebakkata/?pesan='.$pesan.'&gr='.$groupId.'&u='.$userId.'&un='.$usernm;
+$url = 'http://karyakreatif.com/tebakkata/?pesan='.$pesan.'&gr='.$groupId.'&u='.$userId.'&un='.$usernm.'&a='.$profile.'&b='.$statusMessage.'&c='.$pictureUrl;
 $json_data = file_get_contents($url);
 $url=json_decode($json_data,1);
 
