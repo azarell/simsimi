@@ -14,7 +14,7 @@ $message 	= $client->parseEvents()[0]['message'];
 $profil = $client->profil($userId);
 $pesan_datang = $message['text'];
 
-$bot = new \LINE\LINEBot(new CurlHTTPClient($channelAccessToken), [
+/*$bot = new \LINE\LINEBot(new CurlHTTPClient($channelAccessToken), [
     'channelSecret' => $channelSecret
 ]);
 
@@ -25,7 +25,7 @@ if ($res->isSucceeded()) {
     $statusMessage = $profile['statusMessage'];
     $pictureUrl = $profile['pictureUrl'];
 }
-
+*/
 if($message['type']=='sticker')
 {	
 	$balas = array(
